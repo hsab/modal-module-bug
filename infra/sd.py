@@ -7,7 +7,7 @@ from modal import App, build, enter, gpu, method, web_endpoint, Volume
 from .image import sdxl_image
 
 
-app_sd = App("inf-sd-xl")
+app_sd = App("infra-sd-xl")
 vol_models = Volume.from_name("models")
 vol_loras = Volume.from_name("loras")
 vol_hfcache = Volume.from_name("hfcache")
@@ -40,7 +40,7 @@ load_options = dict(
         "/root/hfcache": vol_hfcache,
     },
 )
-class Model:
+class ModelSDXL:
     def download_models(sef, model: str):
         from huggingface_hub import snapshot_download
 
